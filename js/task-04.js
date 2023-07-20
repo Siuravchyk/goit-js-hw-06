@@ -1,3 +1,4 @@
+ 
 let counterValue = 0;
   const valueSpan = document.getElementById('value');
   const incrementBtn = document.querySelector('[data-action="increment"]');
@@ -21,4 +22,4 @@ let counterValue = 0;
   });
 
   // Ініціалізуємо лічильник
-  updateCounter();
+updateCounter(); 
