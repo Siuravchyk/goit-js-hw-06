@@ -22,3 +22,18 @@ button {
   padding: 8px 12px;
   cursor: pointer;
 }
+
+/**task-03**/
+.gallery {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  gap: 30px;
+}
+
+.item-imgs img {
+  max-width: 400px;
+}
+
+/*********/

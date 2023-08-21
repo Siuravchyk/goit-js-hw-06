@@ -1,20 +1,24 @@
-const loginForm = document.querySelector('.login-form');
+const form = document.querySelector(".login-form");
 
-  loginForm.addEventListener('submit', (event) => {
-    event.preventDefault(); // Попередження перезавантаження сторінки
+const submitHandler = (event) => { 
+    event.preventDefault();
 
-    const formData = new FormData(loginForm);
-    const formDataObject = {};
+    const {
+    elements: { email, password }
+  } = event.currentTarget;
 
-    formData.forEach((value, name) => {
-      formDataObject[name] = value;
-    });
+    if (email.value === "" || password.value === "") {
 
-    if (!formDataObject.email || !formDataObject.password) {
-      alert('Please fill in all fields');
-      return;
+        alert("Please fill in all the fields!");
+    } else {
+
+        const info = {
+            email: email.value,
+            password: password.value
+        }
+
+        console.log(info)
+        event.currentTarget.reset();
     }
-
-    console.log(formDataObject); // Вивести об'єкт в консоль
-    loginForm.reset(); // Очистити форму
-  });
+}
+form.addEventListener("submit", submitHandler);
